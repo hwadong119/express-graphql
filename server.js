@@ -16,7 +16,8 @@ const root = {
 
 app.use('/graphql', graphqlHTTP({
   schema: schema,
-  rootValue: root
+  rootValue: root,
+  graphiql: true
 }))
 
 app.listen(port, () => {
