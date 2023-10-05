@@ -7,6 +7,11 @@ module.exports = {
     },
     post: (_, args) => {
       return postsModel.getPostById(args.id);
+    },
+  },
+  Mutation: {
+    addNewPost: (_, args) => {
+      return postsModel.addNewPost(args.id, args.title, args.description)
     }
   }
 }

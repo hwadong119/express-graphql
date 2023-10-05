@@ -20,14 +20,27 @@ const posts = [
 function getAllPosts() {
   return posts;
 }
-
+ 
 function getPostById(id) {
   return posts.find(post => {
     return post.id === id;
   })
 }
 
+function addNewPost(id, title, description) {
+  const newPost = {
+    id,
+    title,
+    description,
+    comments: []
+  }
+
+  posts.push(newPost);
+  return newPost;
+}
+
 module.exports = {
   getAllPosts,
-  getPostById
+  getPostById,
+  addNewPost
 }
